@@ -1,26 +1,14 @@
-# GTM Systems Build
+```mermaid
+flowchart TD
+    A[01_generate_events.py<br/>Generate synthetic events] --> B[PostHog]
 
-A working GTM (go-to-market) system for product-led SaaS companies, built in public over 6 weeks.
+    B --> C[02_posthog_to_hubspot.py]
 
-## What this is
+    C --> D[HubSpot Contacts & Companies]
 
-An end-to-end system that captures product usage signals, enriches them with firmographic context, scores them for sales-readiness, and surfaces the result in a CRM — using PostHog (product analytics), HubSpot (CRM), n8n (orchestration), and custom Python (enrichment, glue logic).
+    D --> E[03_enrich_companies.py<br/>Company fit]
 
-Anchored to PostHog as the reference product.
+    E --> F[04_score_and_route.py<br/>Intent scoring & routing]
 
-## Current status
-
-Week 1 — Foundation and product profile.
-
-## Documentation
-
-Build log and weekly progress: [Notion link — will add later]
-LinkedIn thread: [will add later]
-
-## Stack
-
-- HubSpot Free CRM
-- PostHog Cloud (free tier)
-- n8n (self-hosted)
-- Python 3.x
-- Hunter.io + Apollo.io free tiers (enrichment)
+    F --> G[Sales-ready HubSpot CRM]
+```
