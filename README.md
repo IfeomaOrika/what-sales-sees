@@ -135,6 +135,8 @@ There's also an exception for big companies. If a large company is barely using 
 
 I assumed HubSpot’s built-in company domain property could uniquely identify companies. It can’t.
 
+![HubSpot upsert failing on a non-unique domain, then succeeding after the fix](images/hubspot-upsert-error.png)
+
 **Fix:** Create a custom unique property for plait_account_id and use that as the match key.
 
 **Lesson:** Never assume third-party defaults match your data model.
